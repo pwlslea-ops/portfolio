@@ -100,16 +100,14 @@ main a {
   color: var(--peche);
 }
 
-/* Survol sur les trois blocs */
+/* Survol sur le texte et les coordonnées (pas sur le formulaire) */
 main p,
-main ul,
-form {
+main ul {
   transition: transform 0.3s;
 }
 
 main p:hover,
-main ul:hover,
-form:hover {
+main ul:hover {
   transform: scale(1.03);
 }
 
@@ -139,11 +137,6 @@ button {
   font-weight: 700;
   border: 2px solid var(--peche);
   border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-button:hover {
-  transform: scale(1.03);
 }
 
 /* Pied de page */
