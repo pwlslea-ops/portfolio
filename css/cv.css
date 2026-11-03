@@ -8,54 +8,48 @@
   --mauve-fonce: #78636a;
 }
 
+/* ===== Styles de base : mobile-first ===== */
+
 /* Couleurs et typographie (héritées par les enfants) */
 body {
   font-family: "Lato", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 400;
   background-color: white;
   color: var(--bleu-fonce);
   margin: 0;
 }
 
-/* Header : nom + menu sur la même ligne (Flexbox) */
+/* Header : nom et menu empilés (Flexbox en colonne) */
 header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   background-color: var(--bleu-fonce);
-  padding: 30px;
+  padding: 1.5rem;
 }
 
 header h1 {
-  margin: 0;
-  margin-right: 60px;
-  margin-bottom: 10px;
+  margin: 0 0 1.25rem 0;
 }
 
 header h1 a {
-  font-size: 32px;
-}
-
-header nav {
-  flex-grow: 1;
+  font-size: 2rem;
 }
 
 header ul {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
   margin: 0;
   padding: 0;
-}
-
-header li {
-  margin: 15px;
 }
 
 header a {
   display: inline-block;
   font-family: "Playfair Display", serif;
   color: var(--peche);
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.3s;
@@ -67,47 +61,49 @@ header a:hover {
 
 /* Titres */
 h1,
-h2,
-h3 {
+h2 {
   font-family: "Playfair Display", serif;
   font-weight: 600;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 1.5rem;
 }
 
-h3 {
-  font-size: 24px;
-}
-
-/* Page CV : mise en page avec Grid */
+/* Page CV : une seule colonne sur mobile, zones nommées (Grid) */
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 60px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "entete"
+    "formation"
+    "experiences"
+    "competences"
+    "coordonnees"
+    "savoirs"
+    "langues"
+    "interets";
+  gap: 3rem;
+  padding: 2.5rem 1.5rem;
   animation: apparition 1s;
 }
 
-main h2 {
-  grid-column: 1 / 3;
+/* Photo et accroche : empilées sur mobile (Flexbox) */
+.container-cv {
+  grid-area: entete;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-/* Haut de page : la photo à gauche, l'accroche encadrée à droite */
-main figure {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: center;
+.container-cv figure {
+  margin: 0;
   text-align: center;
-  margin: 20px;
 }
 
-main > p {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: center;
-  margin: 20px;
-  padding: 30px;
+.container-cv p {
+  margin: 0;
+  padding: 1.5rem;
   background-color: var(--bleu-fonce);
   color: white;
   border: 2px solid var(--peche);
@@ -116,10 +112,7 @@ main > p {
 
 /* Les blocs + survol */
 section {
-  margin: 20px;
-  padding: 30px;
-  background-color: var(--bleu-fonce);
-  color: white;
+  padding: 1.5rem;
   border: 2px solid var(--peche);
   border-radius: 20px;
   transition: transform 0.3s;
@@ -129,30 +122,90 @@ section:hover {
   transform: scale(1.03);
 }
 
-section h3 {
+section h2 {
   margin-top: 0;
 }
 
-section a {
+section ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+/* Chaque bloc occupe sa zone de la grille */
+.formation {
+  grid-area: formation;
+}
+
+.experiences {
+  grid-area: experiences;
+}
+
+.competences {
+  grid-area: competences;
+}
+
+.coordonnees {
+  grid-area: coordonnees;
+}
+
+.savoirs {
+  grid-area: savoirs;
+}
+
+.langues {
+  grid-area: langues;
+}
+
+.interets {
+  grid-area: interets;
+}
+
+/* Blocs du parcours : fond sombre, titres en pêche */
+.formation,
+.experiences,
+.competences {
+  background-color: var(--bleu-fonce);
+  color: white;
+}
+
+.formation h2,
+.experiences h2,
+.competences h2 {
   color: var(--peche);
 }
 
-/* Images */
+/* Blocs d'informations : fond blanc */
+.coordonnees,
+.savoirs,
+.langues,
+.interets {
+  background-color: white;
+  color: var(--bleu-fonce);
+}
+
+.coordonnees a {
+  color: var(--bleu-fonce);
+}
+
+/* Images fluides */
 img {
   width: 250px;
+  max-width: 100%;
+  height: auto;
   border: 4px solid var(--peche);
   border-radius: 20px;
 }
 
 figcaption {
-  font-size: 16px;
+  font-size: 1rem;
+  margin-top: 0.75rem;
 }
 
 /* Pied de page */
 footer {
   background-color: var(--bleu-fonce);
   color: white;
-  padding: 30px;
+  padding: 1.875rem 1.5rem;
 }
 
 /* Animations CSS */
@@ -162,5 +215,73 @@ footer {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* ===== Tablette : à partir de 768px ===== */
+@media (min-width: 768px) {
+  /* Header : nom à gauche, menu à droite en ligne */
+  header {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.875rem;
+  }
+
+  header h1 {
+    margin: 0 3.75rem 0.625rem 0;
+  }
+
+  header nav {
+    flex-grow: 1;
+  }
+
+  header ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header li {
+    margin: 0.9rem;
+  }
+
+  /* Page CV : plus d'air */
+  main {
+    gap: 4rem;
+    padding: 4rem;
+  }
+
+  /* Photo à gauche, accroche à droite */
+  .container-cv {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .container-cv p {
+    flex: 1;
+    padding: 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+/* ===== Ordinateur : à partir de 1024px, blocs alignés par rangées ===== */
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+      "entete entete"
+      "coordonnees formation"
+      "interets experiences"
+      "savoirs competences"
+      "langues langues";
+  }
+
+  /* Le haut de page suit les deux mêmes colonnes que les blocs du dessous */
+  .container-cv {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
   }
 }

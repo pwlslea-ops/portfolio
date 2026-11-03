@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projets - Léa Pauwels</title>
-    <link rel="stylesheet" href="css/projets.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/projets.css" />
   </head>
   <body>
     <header>
@@ -25,44 +25,34 @@
       </nav>
     </header>
 
-    <main>
+    <main class="grid-projets">
       <article>
-        <h3>Portfolio personnel</h3>
-        <p>
-          Site web de présentation réalisé dans le cadre de mon DEUST Webmaster
-          et métiers de l'internet : HTML sémantique, plusieurs pages reliées
-          entre elles, versionné avec Git et publié sur GitHub.
-        </p>
-        <p>
-          <a href="https://github.com/pwlslea-ops/portfolio"
-            >Voir le code sur GitHub</a
-          >
-        </p>
-      </article>
-      <article>
-        <h3>Logo entreprise fictive pour café torréfacteur</h3>
+        <h2>Logo et portfolio du studio graphique fictif</h2>
         <ul>
           <li>Illustrator</li>
           <li>Identité visuelle</li>
-          <li>HTML / CSS</li>
+          <li>Portfolio en PDF</li>
+          <li>Projet de groupe</li>
         </ul>
         <p>
-          Création du logo sur Illustrator avec ses variantes et son style
-          typographique. Création du site web de la marque en HTML/CSS.
+          Création du logo de notre studio graphique fictif, réalisée en groupe,
+          et présentation de nos réalisations dans le portfolio du studio.
         </p>
         <figure>
-          <a href="Projet perso Marée Basse/index.html">
-            <img
-              src="image/detail-maree-basse.png"
-              alt="Logo avec variante et typographie. Cliquer pour visiter le site Marée Basse"
-            />
-          </a>
-          <figcaption>Logo et typographie de Marée Basse.</figcaption>
+          <img
+            class="fond-blanc"
+            src="image/logodonde.png"
+            alt="Logo du studio graphique fictif"
+          />
+          <figcaption>Logo du studio graphique fictif.</figcaption>
         </figure>
+        <p>
+          <a href="image/portfolioonde.pdf">Ouvrir le portfolio en PDF</a>
+        </p>
       </article>
 
       <article>
-        <h3>Scène d'illustration inspirée de South Park</h3>
+        <h2>Scène d'illustration inspirée de South Park</h2>
         <ul>
           <li>Illustration vectorielle</li>
           <li>Illustrator</li>
@@ -88,8 +78,32 @@
           <a href="image/scene-southpark.pdf">Ouvrir le PDF</a>
         </p>
       </article>
+
       <article>
-        <h3>Cadre de montre</h3>
+        <h2>Logo entreprise fictive pour café torréfacteur</h2>
+        <ul>
+          <li>Illustrator</li>
+          <li>Identité visuelle</li>
+          <li>HTML / CSS</li>
+        </ul>
+        <p>
+          Création du logo sur Illustrator avec ses variantes et son style
+          typographique. Création du site web de la marque en HTML/CSS.
+        </p>
+        <figure>
+          <a href="Projet perso Marée Basse/index.html">
+            <img
+              class="fond-blanc"
+              src="image/detail-maree-basse.png"
+              alt="Logo avec variante et typographie. Cliquer pour visiter le site Marée Basse"
+            />
+          </a>
+          <figcaption>Logo et typographie de Marée Basse.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h2>Cadre de montre</h2>
         <ul>
           <li>Illustrator</li>
           <li>Illustration vectorielle</li>
@@ -97,14 +111,29 @@
         <p>Cadre de montre réalisé sur Illustrator.</p>
         <figure>
           <img
-            src="image/cadran-montre.jpg"
+            src="image/cadranmontre.jpg"
             alt="Cadre de montre réalisé sur Illustrator"
           />
           <figcaption>Cadre de montre réalisé sur Illustrator.</figcaption>
         </figure>
       </article>
+
       <article>
-        <h3>Affiche pour une serrurerie fictive</h3>
+        <h2>Portfolio personnel</h2>
+        <p>
+          Site web de présentation réalisé dans le cadre de mon DEUST Webmaster
+          et métiers de l'internet : HTML sémantique, plusieurs pages reliées
+          entre elles, versionné avec Git et publié sur GitHub.
+        </p>
+        <p>
+          <a href="https://github.com/pwlslea-ops/portfolio"
+            >Voir le code sur GitHub</a
+          >
+        </p>
+      </article>
+
+      <article class="projet-large">
+        <h2>Affiche pour une serrurerie fictive</h2>
         <ul>
           <li>InDesign</li>
           <li>Affiche recto-verso</li>
@@ -135,7 +164,7 @@
     </main>
 
     <footer>
-      <p>&copy;2026 Léa Pauwels</p>
+      <p>&copy; 2026 Léa Pauwels</p>
     </footer>
   </body>
 </html>

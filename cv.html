@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV - Léa Pauwels</title>
-    <link rel="stylesheet" href="css/cv.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/cv.css" />
   </head>
   <body>
     <header>
@@ -26,21 +26,51 @@
     </header>
 
     <main>
-      <figure>
-        <img
-          src="image/Photo à jour cv v2.jpg"
-          alt="Portrait de Léa Pauwels"
-          width="150"
-        />
-        <figcaption>Léa Pauwels, étudiante en DEUST WMI.</figcaption>
-      </figure>
-      <p>
-        De l'idée à la mise en ligne, je mène mes projets de A à Z : logo,
-        affiche et site web. Mon parcours en QHSE m'a appris la rigueur, mon
-        DEUST m'apporte la technique.
-      </p>
-      <section>
-        <h3>Coordonnées</h3>
+      <div class="container-cv">
+        <figure>
+          <img src="image/photo-cv.jpg" alt="Portrait de Léa Pauwels" />
+          <figcaption>Léa Pauwels, étudiante en DEUST WMI.</figcaption>
+        </figure>
+        <p>
+          De l'idée à la mise en ligne, je mène mes projets de A à Z : logo,
+          affiche et site web. Mon parcours en QHSE m'a appris la rigueur, mon
+          DEUST m'apporte la technique.
+        </p>
+      </div>
+
+      <section class="formation">
+        <h2>Formation</h2>
+        <ul>
+          <li>DEUST Webmaster, IUT de Calais (2026-2028)</li>
+          <li>Remise à niveau PASS CNED (2025-2026)</li>
+          <li>Master QHSE, IUT de Lille (2022-2024)</li>
+        </ul>
+      </section>
+
+      <section class="experiences">
+        <h2>Expériences professionnelles</h2>
+        <ul>
+          <li>Factrice La Poste - Berck (Nov 2025 - Déc 2025)</li>
+          <li>Employée de DRIVE E.Leclerc - Étaples (Août 2025)</li>
+          <li>Chargée QSE MAAS - Wavrin (Août 2023 - Sept 2024)</li>
+        </ul>
+      </section>
+
+      <section class="competences">
+        <h2>Compétences</h2>
+        <ul>
+          <li>Adobe Illustrator (en cours)</li>
+          <li>Adobe Premiere Pro (en cours)</li>
+          <li>Adobe Photoshop (en cours)</li>
+          <li>Adobe InDesign</li>
+          <li>Visual Studio Code</li>
+          <li>Git et GitHub</li>
+          <li>Langage HTML (en cours)</li>
+        </ul>
+      </section>
+
+      <section class="coordonnees">
+        <h2>Coordonnées</h2>
         <ul>
           <li>E-mail : pwlsleapro@gmail.com</li>
           <li>Localisation : Côte d'Opale</li>
@@ -54,39 +84,8 @@
         </ul>
       </section>
 
-      <section>
-        <h3>Formation</h3>
-        <ul>
-          <li>DEUST Webmaster, IUT de Calais (2026-2028)</li>
-          <li>Remise à niveau PASS CNED (2025-2026)</li>
-          <li>Master QHSE, IUT de Lille (2022-2024)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Expériences professionnelles</h3>
-        <ul>
-          <li>Factrice LaPoste - Berck (Nov 2025 - Dec 2025)</li>
-          <li>Employée de DRIVE E.Leclerc - Etaples (Août 2025)</li>
-          <li>Chargée QSE MAAS - Wavrin (Aout 2023 - Sept 2024)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Compétences</h3>
-        <ul>
-          <li>Adobe Illustrator (en cours)</li>
-          <li>Adobe PremierePro (en cours)</li>
-          <li>Adobe Photoshop (en cours)</li>
-          <li>Adobe InDesign</li>
-          <li>Visual Studio Code</li>
-          <li>Git et Github</li>
-          <li>Langage HTML (en cours)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Savoirs</h3>
+      <section class="savoirs">
+        <h2>Savoirs</h2>
         <ul>
           <li>Travail d'équipe</li>
           <li>Autonomie</li>
@@ -95,16 +94,17 @@
           <li>Organisation</li>
         </ul>
       </section>
-      <section>
-        <h3>Langues</h3>
+
+      <section class="langues">
+        <h2>Langues</h2>
         <ul>
           <li>Français : langue maternelle</li>
           <li>Anglais : niveau professionnel</li>
         </ul>
       </section>
 
-      <section>
-        <h3>Centres d'intérêt</h3>
+      <section class="interets">
+        <h2>Centres d'intérêt</h2>
         <ul>
           <li>Photographie</li>
           <li>Jeux vidéo</li>
@@ -114,7 +114,7 @@
     </main>
 
     <footer>
-      <p>&copy;2026 Léa Pauwels</p>
+      <p>&copy; 2026 Léa Pauwels</p>
     </footer>
   </body>
 </html>
