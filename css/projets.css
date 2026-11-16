@@ -1,5 +1,6 @@
-/* Variables CSS */
+/* ===== Variables CSS ===== */
 :root {
+  --blanc: white;
   --orange: #e29a5a;
   --peche: #ecad87;
   --bleu-fonce: #2f5a6e;
@@ -8,19 +9,19 @@
   --mauve-fonce: #78636a;
 }
 
-/* ===== Styles de base : mobile-first ===== */
+/* ===== 1. Styles de base : Mobile-First (téléphone) ===== */
 
 /* Couleurs et typographie (héritées par les enfants) */
 body {
   font-family: "Lato", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
-  background-color: white;
+  background-color: var(--blanc);
   color: var(--bleu-fonce);
   margin: 0;
 }
 
-/* Header : nom et menu empilés (Flexbox en colonne) */
+/* En-tête : nom et menu empilés sur mobile (Flexbox) */
 header {
   display: flex;
   flex-direction: column;
@@ -36,13 +37,14 @@ header h1 a {
   font-size: 2rem;
 }
 
-header ul {
+/* Menu : conteneur flexible, en colonne sur mobile */
+header nav ul {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 header a {
@@ -70,81 +72,14 @@ h2 {
   font-size: 1.5rem;
 }
 
-/* Page Projets : une seule colonne sur mobile */
-.grid-projets {
-  padding: 2rem 1.5rem;
-  animation: apparition 1s;
-}
-
-/* Les blocs (un par projet) + survol */
-article {
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  background-color: var(--bleu-fonce);
-  color: white;
-  border: 2px solid var(--peche);
-  border-radius: 20px;
-  break-inside: avoid;
-  transition: transform 0.3s;
-}
-
-article:hover {
-  transform: scale(1.03);
-}
-
-article h2 {
-  margin-top: 0;
-}
-
-article a {
-  color: var(--peche);
-}
-
-/* Images fluides, dans une figure, sans survol */
-figure {
-  margin: 1rem 0;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-  border: 4px solid var(--peche);
-  border-radius: 20px;
-}
-
-/* Images en PNG : fond blanc derrière l'image */
-.fond-blanc {
-  background-color: white;
-  padding: 0.625rem;
-}
-
-figcaption {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-}
-
-/* Affiche recto-verso : côte à côte et centrées (Flexbox) */
-.affiches {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.affiches figure {
-  flex: 0 1 20rem;
-  min-width: 0;
-  margin: 0;
-}
-
 /* Pied de page */
 footer {
   background-color: var(--bleu-fonce);
-  color: white;
+  color: var(--blanc);
   padding: 1.875rem 1.5rem;
 }
 
-/* Animations CSS */
+/* Animation d'apparition */
 @keyframes apparition {
   from {
     opacity: 0;
@@ -154,9 +89,82 @@ footer {
   }
 }
 
-/* ===== Écrans tablette et ordinateur : à partir de 768px ===== */
+/* Page Projets : grille adaptative (Grid) */
+.grid-projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  animation: apparition 1s;
+}
+
+/* Les blocs (un par projet) : même hauteur sur une même rangée */
+.grid-projets article {
+  padding: 1.5rem;
+  background-color: var(--bleu-fonce);
+  color: var(--blanc);
+  border: 2px solid var(--peche);
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+.grid-projets article:hover {
+  transform: scale(1.03);
+}
+
+.grid-projets article h2 {
+  margin-top: 0;
+}
+
+/* Liens en blanc : contraste suffisant sur le fond bleu foncé */
+.grid-projets article a {
+  color: var(--blanc);
+}
+
+.grid-projets figure {
+  margin: 1rem 0;
+}
+
+/* Images fluides, dans une figure, sans survol */
+img {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  border: 4px solid var(--peche);
+  border-radius: 20px;
+}
+
+/* Images en PNG : fond blanc derrière l'image */
+.fond-blanc {
+  background-color: var(--blanc);
+  padding: 0.625rem;
+}
+
+/* Flyer : image réduite à 60 % de la largeur du bloc */
+.reduite {
+  width: 60%;
+}
+
+figcaption {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Affiche recto-verso : côte à côte, centrées, taille réduite (Flexbox) */
+.affiches {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.affiches figure {
+  flex: 0 1 15rem;
+  margin: 0;
+}
+
+/* ===== 2. Adaptations pour tablette et ordinateur (à partir de 768px) ===== */
 @media (min-width: 768px) {
-  /* Header : nom à gauche, menu à droite en ligne */
+  /* En-tête : nom à gauche, menu en ligne à droite */
   header {
     flex-direction: row;
     align-items: center;
@@ -171,35 +179,33 @@ footer {
     flex-grow: 1;
   }
 
-  header ul {
+  header nav ul {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   header li {
     margin: 0.9rem;
   }
 
-  /* Projets : colonnes qui se remplissent sans trou (3 au maximum) */
+  /* Projets : colonnes plus larges, plus d'espace */
   .grid-projets {
-    column-width: 26rem;
-    column-count: 3;
-    column-gap: 1.875rem;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 2.5rem;
     padding: 4rem;
   }
 
-  article {
-    margin-bottom: 1.875rem;
+  .grid-projets article {
     padding: 1.875rem;
   }
 
-  /* L'affiche s'étend sur toutes les colonnes */
-  .projet-large {
-    column-span: all;
+  /* L'affiche s'étend sur deux colonnes */
+  .grid-projets .projet-large {
+    grid-column: 1 / 3;
   }
 
-  /* Grand écart entre le recto et le verso */
   .affiches {
-    gap: 8rem;
+    gap: 4rem;
   }
 }
