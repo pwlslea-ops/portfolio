@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Ton design system : couleurs et polices (crée les classes bg-…, text-…, font-…) */
+@theme {
+  --color-bleu-fonce: #2f5a6e;
+  --color-peche: #ecad87;
+  --color-orange: #e29a5a;
+  --color-bleu-gris: #a3b5c5;
+  --font-titre: "Playfair Display", serif;
+  --font-texte: "Lato", sans-serif;
+}
+
+/* Apparence par défaut des balises (Tailwind remet tout à zéro) */
+@layer base {
+  h2 {
+    @apply font-titre text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply font-titre text-xl font-semibold;
+  }
+
+  ul {
+    @apply list-disc pl-6;
+  }
+}
