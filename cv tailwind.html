@@ -12,34 +12,78 @@
     />
     <link rel="stylesheet" href="dist/output.css" />
   </head>
-  <body>
-    <header>
-      <h1><a href="index.html">Léa Pauwels</a></h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="projets.html">Projets</a></li>
-          <li><a href="contact.html">Contact</a></li>
+  <body class="font-texte text-lg text-bleu-fonce">
+    <header
+      class="flex flex-col gap-5 bg-bleu-fonce p-6 md:flex-row md:items-center md:p-8"
+    >
+      <h1 class="font-titre text-3xl font-semibold md:mr-14">
+        <a href="index.html" class="text-peche">Léa Pauwels</a>
+      </h1>
+      <nav class="md:flex-1">
+        <ul
+          class="flex list-none flex-col gap-4 p-0 md:flex-row md:items-center md:justify-between"
+        >
+          <li>
+            <a
+              href="index.html"
+              class="inline-block font-titre text-xl font-semibold text-peche transition-colors hover:text-white"
+              >Accueil</a
+            >
+          </li>
+          <li>
+            <a
+              href="cv.html"
+              class="inline-block font-titre text-xl font-semibold text-peche transition-colors hover:text-white"
+              >CV</a
+            >
+          </li>
+          <li>
+            <a
+              href="projets.html"
+              class="inline-block font-titre text-xl font-semibold text-peche transition-colors hover:text-white"
+              >Projets</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="inline-block font-titre text-xl font-semibold text-peche transition-colors hover:text-white"
+              >Contact</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <div class="container-cv">
-        <figure>
-          <img src="image/photo-cv.jpg" alt="Portrait de Léa Pauwels" />
-          <figcaption>Léa Pauwels, étudiante en DEUST WMI.</figcaption>
+    <main
+      class="grid grid-cols-1 gap-12 px-6 py-10 md:gap-16 md:p-16 lg:grid-cols-[2fr_3fr]"
+    >
+      <div
+        class="flex flex-col gap-8 md:flex-row md:items-center md:gap-16 lg:col-span-2 lg:grid lg:grid-cols-[2fr_3fr]"
+      >
+        <figure class="text-center md:flex-1">
+          <img
+            src="image/photo-cv.jpg"
+            alt="Portrait de Léa Pauwels"
+            class="inline-block w-60 rounded-[20px] border-4 border-peche"
+          />
+          <figcaption class="mt-3 text-base">
+            Léa Pauwels, étudiante en DEUST WMI.
+          </figcaption>
         </figure>
-        <p>
+        <p
+          class="rounded-[20px] border-2 border-peche bg-bleu-fonce p-6 text-white md:flex-1 md:p-8"
+        >
           De l'idée à la mise en ligne, je mène mes projets de A à Z : logo,
           affiche et site web. Mon parcours en QHSE m'a appris la rigueur, mon
           DEUST m'apporte la technique.
         </p>
       </div>
 
-      <section class="formation">
-        <h2>Formation</h2>
+      <section
+        class="rounded-[20px] border-2 border-peche bg-bleu-fonce p-6 text-white transition-transform hover:scale-[1.03] md:p-8 lg:col-start-2 lg:row-start-2"
+      >
+        <h2 class="mb-6 text-peche">Formation</h2>
         <ul>
           <li>DEUST Webmaster, IUT de Calais (2026-2028)</li>
           <li>Remise à niveau PASS CNED (2025-2026)</li>
@@ -47,8 +91,10 @@
         </ul>
       </section>
 
-      <section class="experiences">
-        <h2>Expériences professionnelles</h2>
+      <section
+        class="rounded-[20px] border-2 border-peche bg-bleu-fonce p-6 text-white transition-transform hover:scale-[1.03] md:p-8 lg:col-start-2 lg:row-start-3"
+      >
+        <h2 class="mb-6 text-peche">Expériences professionnelles</h2>
         <ul>
           <li>Factrice La Poste - Berck (Nov 2025 - Déc 2025)</li>
           <li>Employée de DRIVE E.Leclerc - Étaples (Août 2025)</li>
@@ -56,8 +102,10 @@
         </ul>
       </section>
 
-      <section class="competences">
-        <h2>Compétences</h2>
+      <section
+        class="rounded-[20px] border-2 border-peche bg-bleu-fonce p-6 text-white transition-transform hover:scale-[1.03] md:p-8 lg:col-start-2 lg:row-start-4"
+      >
+        <h2 class="mb-6 text-peche">Compétences</h2>
         <ul>
           <li>Adobe Illustrator (en cours)</li>
           <li>Adobe Premiere Pro (en cours)</li>
@@ -69,23 +117,32 @@
         </ul>
       </section>
 
-      <section class="coordonnees">
-        <h2>Coordonnées</h2>
+      <section
+        class="rounded-[20px] border-2 border-peche bg-white p-6 text-bleu-fonce transition-transform hover:scale-[1.03] md:p-8 lg:col-start-1 lg:row-start-2"
+      >
+        <h2 class="mb-6">Coordonnées</h2>
         <ul>
           <li>E-mail : pwlsleapro@gmail.com</li>
           <li>Localisation : Côte d'Opale</li>
           <li>
             <a
               href="https://www.linkedin.com/in/l%C3%A9a-pauwels62/?isSelfProfile=true"
+              class="underline"
               >LinkedIn</a
             >
           </li>
-          <li><a href="https://github.com/pwlslea-ops">GitHub</a></li>
+          <li>
+            <a href="https://github.com/pwlslea-ops" class="underline"
+              >GitHub</a
+            >
+          </li>
         </ul>
       </section>
 
-      <section class="savoirs">
-        <h2>Savoirs</h2>
+      <section
+        class="rounded-[20px] border-2 border-peche bg-white p-6 text-bleu-fonce transition-transform hover:scale-[1.03] md:p-8 lg:col-start-1 lg:row-start-4"
+      >
+        <h2 class="mb-6">Savoirs</h2>
         <ul>
           <li>Travail d'équipe</li>
           <li>Autonomie</li>
@@ -95,16 +152,20 @@
         </ul>
       </section>
 
-      <section class="langues">
-        <h2>Langues</h2>
+      <section
+        class="rounded-[20px] border-2 border-peche bg-white p-6 text-bleu-fonce transition-transform hover:scale-[1.03] md:p-8 lg:col-span-2 lg:row-start-5"
+      >
+        <h2 class="mb-6">Langues</h2>
         <ul>
           <li>Français : langue maternelle</li>
           <li>Anglais : niveau professionnel</li>
         </ul>
       </section>
 
-      <section class="interets">
-        <h2>Centres d'intérêt</h2>
+      <section
+        class="rounded-[20px] border-2 border-peche bg-white p-6 text-bleu-fonce transition-transform hover:scale-[1.03] md:p-8 lg:col-start-1 lg:row-start-3"
+      >
+        <h2 class="mb-6">Centres d'intérêt</h2>
         <ul>
           <li>Photographie</li>
           <li>Jeux vidéo</li>
@@ -113,7 +174,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="bg-bleu-fonce px-6 py-7 text-white">
       <p>&copy; 2026 Léa Pauwels</p>
     </footer>
   </body>
